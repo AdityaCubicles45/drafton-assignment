@@ -65,7 +65,7 @@ export default function Form() {
 
     useEffect(() => {
         async function init() {
-            const proposalsExist = await axios.get(`http://localhost:3000/api/proposals?userId=${userId}`)
+            const proposalsExist = await axios.get(`https://drafton-assignment-v1.vercel.app/api/proposals?userId=${userId}`)
             if (proposalsExist.data.proposals.length) {
                 router.push(`/dashboard/${userId}`)
             }
@@ -90,7 +90,7 @@ export default function Form() {
                     problems: problemsRef.current,
                     solutions: solutionsRef.current
                 })
-                await axios.post("http://localhost:3000/api/generate", {
+                await axios.post("https://drafton-backend.onrender.com/api/v2/generate", {
                     userId: userId,
                     name: companyNameRef.current,
                     details: detailsRef.current,
