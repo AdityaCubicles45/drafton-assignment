@@ -38,7 +38,7 @@ export default function Page({
   useEffect(() => {
     async function init() {
       try {
-        const axiosData = await axios.get(`http://localhost:3000/api/proposals?userId=${params.userId}`)
+        const axiosData = await axios.get(`https://drafton-assignment-v1.vercel.app/api/proposals?userId=${params.userId}`)
         setProposals(axiosData.data.proposals)
         setLoading(false)
       }
