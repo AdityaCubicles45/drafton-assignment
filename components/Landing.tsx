@@ -23,6 +23,15 @@ export default function Landing() {
         password: z.string().min(8)
     })
 
+        useEffect(() => {
+        //To spin up Render Backend
+        axios.get("https://drafton-backend.onrender.com/")
+        toast({
+            title: "Starting the server",
+            description: "Our servers are spinning up, hold on!",
+        })
+    }, [])
+
     const onSubmit = async () => {
         const data = {
             username: userNameRef.current,
