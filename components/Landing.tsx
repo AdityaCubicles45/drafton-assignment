@@ -66,7 +66,7 @@ export default function Landing() {
             };
             console.log(data)
             if (formSchema.parse(data)) {
-                const result = await axios.post("http://localhost:3000/api/signup", {
+                const result = await axios.post("https://drafton-assignment-v1.vercel.app/api/signup", {
                     username: data.username,
                     password: data.password
                 })
